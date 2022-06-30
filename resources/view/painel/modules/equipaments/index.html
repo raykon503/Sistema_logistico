@@ -1,0 +1,35 @@
+<h1>Simol</h1>
+
+<a href="{{URL}}/equipaments/new" class="btn btn-success view_modal">Cadastras GTM</a>
+
+<hr>
+
+<table class="table table-dark table-striped">
+    <thead>
+    <tr>
+        <th>Simol</th>
+        <th>Titulo</th>
+        <th>Tipo de Transporte</th>
+        <th>Forma de Envio</th>
+        <th>Data Inclusão</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{itens}}
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="detalhes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"></div>
+    </div>
+</div>
+
+<script>
+    $('.view_modal').on('click', function (event){
+        event.preventDefault();
+
+        $("#detalhes").modal('show').find('.modal-content').load($(this).attr('href'));
+    });
+</script>
